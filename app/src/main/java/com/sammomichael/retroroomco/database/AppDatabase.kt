@@ -9,8 +9,10 @@ import com.sammomichael.retroroomco.data.userdata.User
 
 @Database(entities = [User::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
+    // abstract function for each of our Dao's
     abstract fun userDao(): UserDao
 
+    // fancy Singleton Pattern for our Database don't memorize please!!!
     companion object {
         @Volatile private var instance: AppDatabase? = null
         private val LOCK = Any()
